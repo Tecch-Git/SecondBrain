@@ -1,11 +1,21 @@
 .features {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   padding: 2rem 0;
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.docAreaCard {
+  display: block;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: var(--ifm-card-border-radius);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  text-decoration: none;
+  color: inherit;
+}
+
+.docAreaCard:hover {
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
 }

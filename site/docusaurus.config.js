@@ -46,6 +46,24 @@ const config = {
       ({
         hashed: true,
         language: ['en', 'de'],
+        docsPluginIdForPreferredVersion: 'ki-entwicklung',
+      }),
+    ],
+  ],
+
+  // Jeder Dokubereich des Wikis ist eine eigene plugin-content-docs-Instanz,
+  // damit künftige, unabhängige Bereiche (z. B. eine Shortcuts-Library) einfach
+  // als weiterer Eintrag ergänzt werden können, ohne sich Sidebars zu teilen.
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'ki-entwicklung',
+        path: 'docs-ki-entwicklung',
+        routeBasePath: 'docs/ki-entwicklung',
+        sidebarPath: './sidebars-ki-entwicklung.js',
+        editUrl: 'https://github.com/Tecch-Git/SecondBrain/tree/main/site/',
       }),
     ],
   ],
@@ -55,21 +73,8 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/Tecch-Git/SecondBrain/tree/main/site/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl: 'https://github.com/Tecch-Git/SecondBrain/tree/main/site/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        docs: false,
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -94,7 +99,8 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            docsPluginId: 'ki-entwicklung',
+            sidebarId: 'kiEntwicklungSidebar',
             position: 'left',
             label: 'KI-gestützte Entwicklung',
           },
@@ -113,7 +119,7 @@ const config = {
             items: [
               {
                 label: 'KI-gestützte Entwicklung',
-                to: '/docs/intro',
+                to: '/docs/ki-entwicklung/intro',
               },
             ],
           },
