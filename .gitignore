@@ -1,0 +1,8 @@
+# Session-/Arbeitskontext, nicht für das Repo gedacht
+SESSION-CONTEXT.md
+
+# Docusaurus-Frontend (wird in /site gescaffoldet)
+site/node_modules/
+site/build/
+site/.docusaurus/
+site/.cache-loader/
