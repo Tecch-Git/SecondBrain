@@ -1,0 +1,8 @@
+{
+  "label": "Skills",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Aufbau und Best Practices für Claude/Agent Skills."
+  }
+}
