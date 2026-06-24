@@ -70,22 +70,38 @@ naheliegend erscheint:
 
 ### 5. Branch wählen, committen, PR erstellen
 
-1. **Branch-Empfehlung geben, User entscheidet:** Prüfen, ob bereits ein
-   offener `add-source`-Branch/PR existiert. Falls ja, dessen PR-Titel/
-   -Beschreibung lesen und einschätzen, ob das Thema inhaltlich zum neuen
-   passt. Dem User eine Empfehlung aussprechen (neuer Branch vs. bestehenden
-   weiterverwenden) — **die finale Entscheidung trifft der User.**
+1. **Branch-Entscheidung (Default: nur neuer Branch wenn nötig):**
+   - Aktueller Branch ist bereits ein offener `add-source`-Branch/PR →
+     dessen PR-Titel/-Beschreibung lesen, inhaltliche Passung zum neuen
+     Thema einschätzen, dann dort weiterarbeiten (außer der User weist
+     explizit auf einen neuen Branch hin).
+   - Aktueller Branch ist `main` (oder sonst kein offener `add-source`-PR
+     passt thematisch) → neuer Branch ist nötig, **kurz als Empfehlung
+     nennen** statt stillschweigend zu erstellen — die finale Entscheidung
+     trifft der User.
 2. **Branch:**
    - Neu: vom aktuellen Arbeits-Branch abzweigen (nicht zwingend `main`),
      sprechender Name (z. B. `claude/add-source-<slug>`).
-   - Bestehend: auf den vorhandenen Branch wechseln und dort weiterarbeiten.
-3. Build-Check (`npm run build` in `site/`) vor dem Commit durchführen.
+   - Bestehend: auf dem vorhandenen Branch weiterarbeiten.
+3. Build-Check (`npm run build` in `site/`) ist **Pflicht-Vorbedingung** —
+   erst bei Erfolg committen/pushen/PR erstellen.
 4. Beide Dateien (Rohanalyse + Doku-Seite, ggf. `_category_.json`)
    committen und pushen.
 5. PR erstellen (neuer Branch) oder Titel/Beschreibung aktualisieren
-   (bestehender Branch) — Base immer `main`. PR-Text listet kurz auf, welche
-   Dateien wo entstanden sind. Tool je nach Umgebung (GitHub-MCP-Server oder
-   `gh`-CLI).
+   (bestehender Branch, ggf. um die neue Quelle ergänzen) — Base immer
+   `main`. Tool je nach Umgebung (GitHub-MCP-Server oder `gh`-CLI).
+   Standardisiertes Format:
+   ```
+   Titel: Add <Kurzthema>
+
+   ## Summary
+   - Rohanalyse <Quelle/Thema> unter `sources/analysis/<slug>.md`
+   - Doku-Seite unter `site/docs-<bereich>/<unterordner>/<slug>.md`
+
+   ## Test plan
+   - [x] `npm run build` in `site/` erfolgreich
+   - [ ] Preview-Link prüfen, Inhalt gegenlesen
+   ```
 6. **Nicht automatisch mergen** — das Erstellen/Aktualisieren des PR ist das
    definierte Ende des Skill-Ablaufs. Der bestehende `pr-preview`-Workflow
    kommentiert automatisch mit der Live-Vorschau-URL (siehe `CLAUDE.md` →
