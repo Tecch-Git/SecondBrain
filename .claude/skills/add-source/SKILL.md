@@ -41,15 +41,13 @@ naheliegend erscheint:
 
 ### 3. Rohe Zusammenfassung unter `/sources` ablegen
 
+- Alle Quellenarten (YouTube wie externe Doku/Artikel) landen einheitlich
+  unter `sources/analysis/<slug>.md`.
 - YouTube-Quelle: Struktur aus
-  `sources/prompt-templates/claude-video-analysis-create-doc.md` verwenden,
-  Datei unter `sources/youtube-analysis/<slug>.md` ablegen.
+  `sources/prompt-templates/claude-video-analysis-create-doc.md` verwenden.
 - Externe Doku/Artikel: gleiche Grundstruktur (Quelle, Thema, Datum,
   Zusammenfassung, Kernkonzepte, ggf. Prompt-Vorlagen/Code, Schritt-für-Schritt,
-  Tools & Ressourcen, Notizen-Platzhalter) verwenden. Falls noch kein
-  passender Unterordner unter `/sources` existiert (z. B. `sources/doku-analyse/`),
-  das vor dem Anlegen kurz mit dem User bestätigen statt stillschweigend einen
-  neuen Ordner zu erfinden.
+  Tools & Ressourcen, Notizen-Platzhalter) verwenden.
 - Diese Datei ist die **vollständige Rohanalyse** — nichts kürzen, was im
   Gemini-Output bzw. der Quelle stand.
 

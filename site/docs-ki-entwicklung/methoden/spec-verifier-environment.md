@@ -11,7 +11,7 @@ AISN-2026-Konferenz.
 :::info Quelle
 [YouTube-Video](https://www.youtube.com/watch?v=7zZy1QTvokM), analysiert mit
 Gemini + Claude. Volle Rohanalyse:
-[`sources/youtube-analysis/karpathy-claude-spec-verifier-environment.md`](https://github.com/Tecch-Git/SecondBrain/blob/main/sources/youtube-analysis/karpathy-claude-spec-verifier-environment.md)
+[`sources/analysis/karpathy-claude-spec-verifier-environment.md`](https://github.com/Tecch-Git/SecondBrain/blob/main/sources/analysis/karpathy-claude-spec-verifier-environment.md)
 :::
 
 ## Kernidee
