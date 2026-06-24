@@ -8,7 +8,7 @@ Andrej Karpathys 3-Schichten-Methode, mit der sich Claude (bzw. KI-Agenten
 generell) deutlich effektiver einsetzen lässt — vorgestellt auf der
 AISN-2026-Konferenz.
 
-:::info Quelle
+:::info[Quelle]
 [YouTube-Video](https://www.youtube.com/watch?v=7zZy1QTvokM), analysiert mit
 Gemini + Claude. Volle Rohanalyse:
 [`sources/analysis/karpathy-claude-spec-verifier-environment.md`](https://github.com/Tecch-Git/SecondBrain/blob/main/sources/analysis/karpathy-claude-spec-verifier-environment.md)

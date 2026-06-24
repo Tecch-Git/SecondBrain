@@ -23,7 +23,9 @@ const config = {
   url: 'https://tecch-git.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/SecondBrain/',
+  // Overridable via DOCUSAURUS_BASE_URL, used by the PR-preview workflow to
+  // build the site under a /pr-preview/pr-<n>/ subpath.
+  baseUrl: process.env.DOCUSAURUS_BASE_URL || '/SecondBrain/',
 
   // GitHub pages deployment config.
   organizationName: 'Tecch-Git', // GitHub org/user name.

@@ -74,8 +74,31 @@ Frontend/Docusaurus-Aufbau) gilt die Methodik aus
 - **Environment-Layer** pflegen: diese CLAUDE.md, die Wissensbasis-Struktur, ggf.
   Custom Skills, Tool-Level-Guardrails (Always do / Ask first / Never do).
 
+## Deploy & PR-Previews
+
+CI/CD läuft über zwei GitHub-Actions-Workflows, beide deployen auf den
+`gh-pages`-Branch (Pages-Settings: "Deploy from branch: `gh-pages` / `(root)`"):
+
+- **`.github/workflows/deploy.yml`** — bei Push auf `main`: baut die Site und
+  deployt sie nach `gh-pages:/` (Root) via `peaceiris/actions-gh-pages`
+  (`keep_files: true`, damit aktive PR-Previews nicht überschrieben werden).
+  Live unter `https://tecch-git.github.io/SecondBrain/`.
+- **`.github/workflows/pr-preview.yml`** — bei jedem PR mit Änderungen in
+  `site/**`: baut die Site mit überschriebener `baseUrl`
+  (`DOCUSAURUS_BASE_URL=/SecondBrain/pr-preview/pr-<n>/`, siehe
+  `site/docusaurus.config.js`) und deployt sie via `rossjrw/pr-preview-action`
+  nach `gh-pages:/pr-preview/pr-<n>/`. Die Action **kommentiert den PR
+  automatisch mit dem Link zur Live-Vorschau** — so lässt sich jede
+  Doku-Änderung vor dem Merge in der fertigen Oberfläche reviewen. Beim
+  Schließen/Mergen des PR wird der Preview-Unterordner automatisch entfernt.
+
 ## Git
 
 - Standardbranch: `main`.
 - Remote: `https://github.com/Tecch-Git/SecondBrain.git` (privates Repo).
 - Klassische `git`-Befehle (init/remote/push); kein `gh`-CLI-Tool.
+- Der `add-source`-Skill (`.claude/skills/add-source/`) committet/pusht seine
+  Änderungen selbst und erstellt/aktualisiert dafür automatisch einen PR
+  (Details siehe dort) — das ist die einzige bewusste Ausnahme vom Prinzip
+  "User committet selbst". Gemerged wird ausschließlich manuell durch den
+  User, nach Prüfung der PR-Preview.
