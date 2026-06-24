@@ -57,7 +57,8 @@ naheliegend erscheint:
   `site/docs-ki-entwicklung/methoden/spec-verifier-environment.md`:
   - Front-Matter mit `sidebar_position` (an existierende Geschwister-Dateien
     anpassen, per `_category_.json` bzw. vorhandene Dateien prüfen).
-  - `:::info Quelle:::`-Block mit Link zur Originalquelle und Link zur
+  - `:::info[Quelle]` ... `:::`-Block (Docusaurus-v3-Syntax, Titel in
+    eckigen Klammern) mit Link zur Originalquelle und Link zur
     Rohanalyse-Datei in `sources/` (GitHub-Blob-URL,
     `https://github.com/Tecch-Git/SecondBrain/blob/main/...`).
   - Inhalt ist eine **kuratierte, gekürzte** Fassung der Rohanalyse (keine

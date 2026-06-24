@@ -8,7 +8,7 @@ Vier Regeln von Barry Zhang und Mahesh Murag (beide Anthropic) für den
 effektiven Einsatz von Claude/Agent Skills statt One-off-Prompts oder
 vollständiger Agenten — vorgestellt auf dem AI Code Summit.
 
-:::info Quelle
+:::info[Quelle]
 [YouTube-Video](https://youtu.be/qOvc9IUKEIc?si=vEplwOaDNSyKGCNE), analysiert
 mit Gemini + Claude. Volle Rohanalyse:
 [`sources/analysis/claude-skills-basics.md`](https://github.com/Tecch-Git/SecondBrain/blob/main/sources/analysis/claude-skills-basics.md)
