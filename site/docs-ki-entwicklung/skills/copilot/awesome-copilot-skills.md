@@ -46,15 +46,58 @@ copilot plugin install <skill-name>@awesome-copilot
 | Acquire Codebase Knowledge | `acquire-codebase-knowledge` | Codebase-Onboarding & Architektur-Doku |
 | Security Review | `security-review` | Vulnerability-Scan & Security-Audit |
 
-`acquire-codebase-knowledge` erzeugt sieben strukturierte Doku-Dateien
-(`STACK.md`, `STRUCTURE.md`, `ARCHITECTURE.md`, `CONVENTIONS.md`,
-`INTEGRATIONS.md`, `TESTING.md`, `CONCERNS.md`) unter `docs/codebase/` und
-dokumentiert nur, was aus Dateien/Terminal-Output verifizierbar ist.
+### `csharp-nunit`
 
-`security-review` argumentiert wie ein menschlicher Security-Researcher:
-verfolgt Datenflüsse über Dateigrenzen, führt Dependency-Audits durch, scannt
-nach Secrets und vergibt Severity-Ratings (CRITICAL/HIGH/MEDIUM/LOW/INFO).
-Wendet Patches **nie** automatisch an.
+Best Practices für NUnit-Unit-Tests in C#: Projekt-Setup, Teststruktur,
+datengetriebene Tests, Assertions, Mocking mit NSubstitute/Moq.
+
+```text
+Write NUnit tests for the GetById method in UserService, including a null-input case.
+```
+```text
+Create data-driven tests using [TestCase] for the PriceCalculation validation logic.
+```
+
+### `ef-core`
+
+Best Practices für Entity Framework Core: DbContext-Design,
+Entity-Modellierung, Migrationen, Querying, Change Tracking.
+
+```text
+Review this DbContext and entity configuration for EF Core best practices.
+```
+```text
+Identify potential N+1 query problems in the following repository method.
+```
+
+### `acquire-codebase-knowledge`
+
+Erzeugt sieben strukturierte Doku-Dateien (`STACK.md`, `STRUCTURE.md`,
+`ARCHITECTURE.md`, `CONVENTIONS.md`, `INTEGRATIONS.md`, `TESTING.md`,
+`CONCERNS.md`) unter `docs/codebase/`. Dokumentiert nur, was aus Dateien oder
+Terminal-Output verifizierbar ist.
+
+```text
+Map this codebase and create full documentation in docs/codebase/.
+```
+```text
+Onboard me to this repo, focusing on the architecture and concerns sections.
+```
+
+### `security-review`
+
+Argumentiert wie ein menschlicher Security-Researcher: verfolgt Datenflüsse
+über Dateigrenzen hinweg, führt Dependency-Audits durch, scannt nach
+Secrets/hardcoded Credentials und vergibt Severity-Ratings
+(CRITICAL/HIGH/MEDIUM/LOW/INFO). Wendet Patches **nie** automatisch an — alle
+Findings erfordern menschliches Review.
+
+```text
+/security-review src/auth/
+```
+```text
+Review the TokenService and its callers for authentication vulnerabilities.
+```
 
 ## Workflow-Skills
 
@@ -68,35 +111,80 @@ Wendet Patches **nie** automatisch an.
 | .NET Best Practices | `dotnet-best-practices` | Umfassender .NET/C#-Best-Practice-Check |
 | .NET Design Pattern Review | `dotnet-design-pattern-review` | Pattern-Konsistenz-Review |
 
-Bemerkenswerte Patterns:
+### `context-map`
 
-- **`context-map`** analysiert vor jeder Implementierung die Codebase und
-  erzeugt eine Tabelle aus zu ändernden Dateien, Abhängigkeiten und
-  betroffenen Tests inkl. Risk-Assessment — beginnt erst nach Review der Map.
-- **`tiny-stepping`** treibt Implementierung in kleinsten Inkrementen voran;
-  nach jedem Schritt fragt der Agent nach Bestätigung der Richtung, bevor er
-  weitermacht.
-- **`review-and-refactor`** liest zuerst alle Coding-Guidelines aus
-  `.github/instructions/*.md` und `.github/copilot-instructions.md` und
-  nutzt sie als Review-Baseline — besonders wirksam in Repos mit
-  detaillierten Instruction-Dateien.
-
-## Beispiel-Prompts
-
-```text
-Map this codebase and create full documentation in docs/codebase/.
-```
+Analysiert vor jeder Implementierung die Codebase und erzeugt eine Tabelle
+aus zu ändernden Dateien, direkten Abhängigkeiten, betroffenen Testdateien
+und Referenz-Patterns inkl. Risk-Assessment — beginnt erst nach Review der
+Map.
 
 ```text
 Create a context map for adding a new filter type to the filter system.
 ```
+```text
+Before fixing this bug, map all files involved in the user authentication flow.
+```
+
+### `what-context-needed`
+
+Listet vor der Beantwortung einer Frage genau auf, welche Dateien Copilot
+sehen muss — kategorisiert als "must see", "should see", "already have".
+
+```text
+What context do you need to help me add a new endpoint following the existing VSA pattern?
+```
+
+### `create-implementation-plan`
+
+Erzeugt eine strukturierte, maschinenlesbare Implementation-Plan-Datei unter
+`/plan/` mit Phasen, Task-Tabellen, Dependency-Deklarationen und
+Risk-Assessments — für autonome Ausführung durch KI-Agenten oder Menschen.
+
+```text
+Create an implementation plan for adding role-based access control to the API.
+```
+
+### `tiny-stepping`
+
+Treibt die Implementierung in kleinsten sinnvollen Inkrementen voran. Nach
+jedem Schritt reviewed der Agent ungestagte Änderungen mit dem Entwickler und
+fragt nach Bestätigung der Richtung, bevor er fortfährt.
+
+```text
+Use tiny stepping to implement the new export endpoint -- one concern at a time.
+```
+
+### `review-and-refactor`
+
+Liest zuerst alle Coding-Guidelines aus `.github/instructions/*.md` und
+`.github/copilot-instructions.md` und nutzt sie als Review-Baseline — führt
+gezieltes Refactoring durch und verifiziert, dass Tests weiterhin
+durchlaufen. Besonders wirksam in Repos mit detaillierten Instruction-Dateien.
 
 ```text
 Review the changes I made in this feature and refactor where needed.
 ```
+```text
+Review this new endpoint implementation against the project conventions.
+```
+
+### `dotnet-best-practices`
+
+Reviewed C#/.NET-Code umfassend: Dokumentation, Design Patterns, Dependency
+Injection, Async/Await, Error Handling, Logging, Security, SOLID-Prinzipien.
 
 ```text
-/security-review src/auth/
+Ensure this service implementation meets .NET best practices for the solution.
+```
+
+### `dotnet-design-pattern-review`
+
+Reviewed C#/.NET-Code auf Design-Pattern-Implementierungsqualität und
+-Konsistenz; markiert Abweichungen von bereits etablierten Patterns in der
+Codebase.
+
+```text
+Check whether this service implementation follows the existing repository pattern correctly.
 ```
 
 ## Tools & Ressourcen
