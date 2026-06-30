@@ -74,7 +74,7 @@ welche Kombination) passt dafür am besten?
 einer langen Liste — z. B. `feature-dev` oder `plan-prd` plus den
 passenden `csharp-reviewer`-Agent für die spätere Review-Phase.
 
-## `skill-scout` — Dubletten-Check vor dem Skill-Bau
+## `skill-scout` — prüft, ob ein Skill schon existiert
 
 Bevor ein neuer Custom Skill erstellt wird, sucht `skill-scout` zuerst
 lokal installierte Skills, dann den ECC-Marketplace, dann GitHub/Web — und
@@ -91,11 +91,19 @@ lokale Suche, mit ehrlichem Hinweis auf das Fehlen der Remote-Quellen.
 **Aufruf:** implizit bei "Skill erstellen"-Anfragen, oder explizit per
 `/skill-scout`.
 
+**Beispiel-Prompt:**
+
+```text
+Ich möchte einen Skill bauen, der Datenbank-Migrationen vor dem Push
+automatisch gegen das aktuelle Schema validiert. Gibt es dafür in ECC
+schon etwas, bevor ich anfange, etwas Neues zu bauen?
+```
+
 **Ergebnis:** eine geordnete Tabelle mit Kandidaten (Treffer, Quelle,
 Warum-Match, Lücke) und drei Optionen: bestehenden Skill nutzen, forken/
 erweitern, oder neu bauen.
 
-## `agent-sort` — Repo-weite Install-Kuratierung
+## `agent-sort` — Installationsumfang pro Repo festlegen
 
 Anders als die beiden anderen geht es hier nicht um eine einzelne Aufgabe,
 sondern um eine einmalige (oder gelegentliche) Entscheidung pro Repository:
@@ -115,9 +123,14 @@ ausgeführt, da es dessen Dateien (package.json, pyproject.toml, Cargo.toml,
 **Aufruf:** explizit per `/agent-sort`, typischerweise einmal pro Projekt
 bei der Einrichtung, danach nur bei größeren Stack-Änderungen erneut.
 
-## Fazit für SecondBrain
+**Beispiel-Prompt:**
 
-Ein eigener neuer Skill für die Skill-Suche war nicht nötig — `ecc-guide`
-deckt genau diesen Anwendungsfall bereits ab. Diese Seite dient als
-Spickzettel, **welcher der drei vorhandenen Skills wofür greift**, damit
-die Auswahl beim nächsten Mal nicht erneut recherchiert werden muss.
+```text
+Wir richten ECC gerade frisch in diesem .NET-Repo ein. Welche Skills,
+Agents und Rules sollten hier standardmäßig geladen werden, und was kann
+stattdessen nur bei Bedarf nachgeladen werden?
+```
+
+`agent-sort` antwortet dann mit einer evidenzbasierten Tabelle (DAILY vs.
+LIBRARY) - inklusive der konkreten
+Repo-Funde, die jede Einstufung begründen.
