@@ -97,6 +97,7 @@ const config = {
         logo: {
           alt: 'SecondBrain Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
         },
         items: [
           {

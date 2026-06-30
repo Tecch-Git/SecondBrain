@@ -4,5 +4,8 @@
   "link": {
     "type": "generated-index",
     "description": "GitHub Copilot Skills — Referenzen und Community-Sammlungen."
+  },
+  "customProps": {
+    "icon": "/img/icons/copilot.svg"
   }
 }

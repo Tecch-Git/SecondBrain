@@ -4,5 +4,8 @@
   "link": {
     "type": "generated-index",
     "description": "Claude/Agent Skills — Aufbau, Best Practices und Funktionsweise."
+  },
+  "customProps": {
+    "icon": "/img/icons/claude.svg"
   }
 }
