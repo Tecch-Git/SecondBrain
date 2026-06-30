@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksite=self.webpackChunksite||[]).push([["639"],{8188(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"ki-entwicklung"}')}}]);
