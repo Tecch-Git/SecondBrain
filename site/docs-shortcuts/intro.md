@@ -14,5 +14,8 @@ Inbox (`sources/shortcuts-inbox.md`) und werden erst nach Prüfung über den
 
 ## Kapitel
 
-Noch keine Kategorien — die erste Kategorie entsteht automatisch, sobald der
-`shortcut-curate`-Skill den ersten Inbox-Eintrag einordnet.
+- **[Windows-Commandline](/docs/shortcuts/category/windows-commandline)** —
+  Shortcuts für die Windows-Kommandozeile (cmd.exe).
+  - **[Windows-Commandline Shortcuts](./windows-commandline/windows-commandline-shortcuts.md)**
+
+Weitere Kapitel folgen.
