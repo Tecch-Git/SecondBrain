@@ -1,16 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Windows-Commandline
-
-## Shortcuts
-
-| Shortcut | Wirkung | Notizen |
-| --- | --- | --- |
-| `Esc` | Aktuelle Eingabezeile löschen | cmd.exe |
-
-## Befehle
+# Befehle
 
 | Befehl | Wirkung | Notizen |
 | --- | --- | --- |

@@ -16,6 +16,7 @@ Inbox (`sources/shortcuts-inbox.md`) und werden erst nach Prüfung über den
 
 - **[Windows-Commandline](/docs/shortcuts/category/windows-commandline)** —
   Shortcuts und Befehle für die Windows-Kommandozeile (cmd.exe).
-  - **[Windows-Commandline](./windows-commandline/windows-commandline-shortcuts.md)**
+  - **[Shortcuts](./windows-commandline/shortcuts.md)**
+  - **[Befehle](./windows-commandline/befehle.md)**
 
 Weitere Kapitel folgen.

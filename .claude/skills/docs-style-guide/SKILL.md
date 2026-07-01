@@ -39,9 +39,11 @@ aufgerufen.
   (z. B. `cls`, `git status`).
 - Automatisch aus der Beschreibung des Eintrags ableiten (Tastendruck vs.
   Eingabe+Enter). Nur bei echter Uneindeutigkeit mit dem User klären.
-- Beide Arten können in derselben Kategorie vorkommen, werden dort aber in
-  getrennten Tabellen geführt (siehe Tabellenformat unten sowie die
-  Struktur-Konvention in `shortcut-curate/SKILL.md`).
+- Beide Arten können in derselben Kategorie vorkommen, werden dort aber als
+  getrennte, direkt in der Sidebar auswählbare Seiten geführt (siehe
+  Tabellenformat unten sowie die Struktur-Konvention in
+  `shortcut-curate/SKILL.md`) — keine zusätzliche Zwischenseite pro
+  Kategorie.
 
 ## Tabellenformat für Shortcut-/Befehl-Übersichten
 
