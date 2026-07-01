@@ -1,10 +1,14 @@
 # Third-Party Notices
 
-Die Skills `ecc-guide`, `skill-scout` und `agent-sort` in diesem Verzeichnis
-sind unveränderte Kopien aus dem "Everything Claude Code" (ECC) Plugin-
-Marketplace, projektweit in dieses Repo übernommen, damit sie auch in
-Cloud-/Remote-Sessions ohne globale ECC-Installation verfügbar sind (siehe
-[`site/docs-ki-entwicklung/skills/claude/ecc-skill-discovery.md`](../../site/docs-ki-entwicklung/skills/claude/ecc-skill-discovery.md)).
+Die Skills `ecc-guide`, `skill-scout` und `agent-sort` unter
+[`.claude/skills/`](./.claude/skills/) sind unveränderte Kopien aus dem
+"Everything Claude Code" (ECC) Plugin-Marketplace, projektweit in dieses
+Repo übernommen, damit sie auch in Cloud-/Remote-Sessions ohne globale
+ECC-Installation verfügbar sind (siehe
+[`site/docs-ki-entwicklung/skills/claude/ecc-skill-discovery.md`](./site/docs-ki-entwicklung/skills/claude/ecc-skill-discovery.md)).
+Alle anderen Skills in diesem Repo (z. B. `add-source`, `shortcut-capture`,
+`shortcut-curate`, `repo-publish-flow`) sind eigene Entwicklungen und von
+diesem Hinweis nicht betroffen.
 
 - **Quelle:** https://github.com/affaan-m/ECC
 - **Lizenz:** MIT
