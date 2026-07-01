@@ -2,9 +2,16 @@
 sidebar_position: 1
 ---
 
-# Windows-Commandline Shortcuts
+# Windows-Commandline
+
+## Shortcuts
 
 | Shortcut | Wirkung | Notizen |
 | --- | --- | --- |
-| `Esc` | Aktuelle Eingabezeile löschen (kompletter getippter Text vor dem Ausführen) | cmd.exe |
-| `cls` | Gesamten Konsolenbildschirm leeren, Cursor neu setzen | Pendant zu `clear` unter Linux; in PowerShell auch als `Clear-Host` verfügbar |
+| `Esc` | Aktuelle Eingabezeile löschen | cmd.exe |
+
+## Befehle
+
+| Befehl | Wirkung | Notizen |
+| --- | --- | --- |
+| `cls` | Konsolenbildschirm leeren | Pendant zu `clear` unter Linux; in PowerShell auch als `Clear-Host` verfügbar |

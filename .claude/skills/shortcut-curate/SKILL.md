@@ -36,25 +36,41 @@ entscheiden — Rückfrage nach der Spec/Verifier-Methode aus `CLAUDE.md`):
 - Der User kann einzelne Einträge auch zurückstellen (bleiben in der Inbox)
   oder verwerfen (werden aus der Inbox entfernt, ohne in die Doku zu
   wandern).
+- Zusätzlich als **Shortcut** (Tastendruck/-kombination) oder **Befehl**
+  (getippte Eingabe + Enter) einordnen — Definition siehe
+  `docs-style-guide/SKILL.md`. In der Regel automatisch aus der
+  Inbox-Beschreibung ableitbar, nur bei Uneindeutigkeit nachfragen.
 
 ### 4. Doku-Struktur aktualisieren
 
-- **Eine Tabellen-Seite pro Kategorie** (nicht eine Seite pro Shortcut) unter
-  `site/docs-shortcuts/<kategorie-slug>/<kategorie-slug>-shortcuts.md`, im
-  Stil:
+Texte (Wirkung/Notizen, Terminologie) gemäß
+`.claude/skills/docs-style-guide/SKILL.md` formulieren.
+
+- **Eine Seite pro Kategorie** (nicht eine Seite pro Shortcut) unter
+  `site/docs-shortcuts/<kategorie-slug>/<kategorie-slug>-shortcuts.md`, mit
+  getrennten Tabellen für Shortcuts und Befehle:
   ```markdown
   ---
   sidebar_position: 1
   ---
 
-  # <Kategorie-Label> Shortcuts
+  # <Kategorie-Label>
+
+  ## Shortcuts
 
   | Shortcut | Wirkung | Notizen |
   | --- | --- | --- |
   | `Strg+Shift+T` | Zuletzt geschlossenen Tab wiederherstellen | |
+
+  ## Befehle
+
+  | Befehl | Wirkung | Notizen |
+  | --- | --- | --- |
+  | `cls` | Konsolenbildschirm leeren | Pendant zu `clear` unter Linux |
   ```
-  Neue Zeilen werden an eine bestehende Tabelle angehängt, nicht als neue
-  Datei.
+  Enthält eine Kategorie nur Shortcuts oder nur Befehle, wird nur der
+  zutreffende Abschnitt angelegt (keine leeren Tabellen). Neue Zeilen werden
+  an eine bestehende Tabelle angehängt, nicht als neue Datei.
 - **Neue Kategorie**: Ordner anlegen + `_category_.json` nach Vorbild von
   `site/docs-ki-entwicklung/methoden/_category_.json` (Label, Position =
   Anzahl bestehender Kategorien + 1, `link.type: generated-index` mit kurzer
