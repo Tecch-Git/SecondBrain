@@ -68,6 +68,17 @@ const config = {
         editUrl: 'https://github.com/Tecch-Git/SecondBrain/tree/main/site/',
       }),
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'shortcuts',
+        path: 'docs-shortcuts',
+        routeBasePath: 'docs/shortcuts',
+        sidebarPath: './sidebars-shortcuts.js',
+        editUrl: 'https://github.com/Tecch-Git/SecondBrain/tree/main/site/',
+      }),
+    ],
   ],
 
   presets: [
@@ -108,6 +119,13 @@ const config = {
             label: 'KI-gestützte Entwicklung',
           },
           {
+            type: 'docSidebar',
+            docsPluginId: 'shortcuts',
+            sidebarId: 'shortcutsSidebar',
+            position: 'left',
+            label: 'Shortcuts',
+          },
+          {
             href: 'https://github.com/Tecch-Git/SecondBrain',
             label: 'GitHub',
             position: 'right',
@@ -123,6 +141,10 @@ const config = {
               {
                 label: 'KI-gestützte Entwicklung',
                 to: '/docs/ki-entwicklung/intro',
+              },
+              {
+                label: 'Shortcuts',
+                to: '/docs/shortcuts/intro',
               },
             ],
           },

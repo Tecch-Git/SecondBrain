@@ -9,6 +9,11 @@ const DocAreas = [
     description: 'Claude Code & Copilot Workflows, Prompting-Patterns.',
     to: '/docs/ki-entwicklung/intro',
   },
+  {
+    title: 'Shortcuts',
+    description: 'Tastatur-, Commandline- und Browser-Shortcuts zum Nachschlagen.',
+    to: '/docs/shortcuts/intro',
+  },
 ];
 
 function DocAreaCard({title, description, to}) {

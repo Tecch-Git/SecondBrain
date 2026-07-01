@@ -24,14 +24,17 @@ bleibt manuell — der User liefert das Gemini-Rohoutput im Chat.
 **Nicht selbst entscheiden** — immer nachfragen, auch wenn ein Thema
 naheliegend erscheint:
 
-1. Vorhandene Dokubereiche zeigen (`ls site/docs-*`, aktuell nur
-   `docs-ki-entwicklung`) und fragen, ob die Quelle in einen bestehenden
-   Bereich gehört oder ein neuer Bereich nötig ist.
+1. Vorhandene Dokubereiche zeigen (`ls site/docs-*`) und fragen, ob die
+   Quelle in einen bestehenden Bereich gehört oder ein neuer Bereich nötig
+   ist.
    - **Neuer Dokubereich** = eigene `plugin-content-docs`-Instanz in
-     `docusaurus.config.js` (neues Plugin, neuer Sidebar, neuer Navbar-Eintrag)
-     — das ist eine strukturelle Änderung, die **nicht** im selben Zug
-     mitgemacht wird. Stattdessen: kurz mit dem User abstimmen, dass dafür
-     erst die Config erweitert wird, bevor Inhalte entstehen.
+     `docusaurus.config.js` (neues Plugin, neuer Sidebar, neuer
+     Navbar-Eintrag, neuer Footer-Eintrag) **plus** eine neue Kachel in
+     `site/src/components/HomepageFeatures/index.js` (`DocAreas`-Array,
+     sonst ist der Bereich vom Dashboard aus nicht erreichbar) — das ist
+     eine strukturelle Änderung, die **nicht** im selben Zug mitgemacht
+     wird. Stattdessen: kurz mit dem User abstimmen, dass dafür erst die
+     Config erweitert wird, bevor Inhalte entstehen.
 2. Innerhalb des Bereichs vorhandene Unterordner zeigen (z. B.
    `site/docs-ki-entwicklung/methoden`) und fragen, ob die Quelle dorthin
    gehört oder ein neuer Unterordner (mit eigener `_category_.json`) sinnvoll
@@ -103,42 +106,23 @@ naheliegend erscheint:
 
 ### 6. Branch wählen, committen, PR erstellen
 
-1. **Branch-Entscheidung (Default: nur neuer Branch wenn nötig):**
-   - Aktueller Branch ist bereits ein offener `add-source`-Branch/PR →
-     dessen PR-Titel/-Beschreibung lesen, inhaltliche Passung zum neuen
-     Thema einschätzen, dann dort weiterarbeiten (außer der User weist
-     explizit auf einen neuen Branch hin).
-   - Aktueller Branch ist `main` (oder sonst kein offener `add-source`-PR
-     passt thematisch) → neuer Branch ist nötig, **kurz als Empfehlung
-     nennen** statt stillschweigend zu erstellen — die finale Entscheidung
-     trifft der User.
-2. **Branch:**
-   - Neu: vom aktuellen Arbeits-Branch abzweigen (nicht zwingend `main`),
-     sprechender Name (z. B. `claude/add-source-<slug>`).
-   - Bestehend: auf dem vorhandenen Branch weiterarbeiten.
-3. Build-Check (`npm run build` in `site/`) ist **Pflicht-Vorbedingung** —
-   erst bei Erfolg committen/pushen/PR erstellen.
-4. Alle geänderten Dateien committen und pushen: Rohanalyse, Doku-Seite,
-   ggf. `_category_.json`, und die aktualisierte `intro.md` aus Schritt 5.
-5. PR erstellen (neuer Branch) oder Titel/Beschreibung aktualisieren
-   (bestehender Branch, ggf. um die neue Quelle ergänzen) — Base immer
-   `main`. Tool je nach Umgebung (GitHub-MCP-Server oder `gh`-CLI).
-   Standardisiertes Format:
-   ```
-   Titel: Add <Kurzthema>
+Diesen Schritt führt der geteilte Ablauf aus
+`.claude/skills/repo-publish-flow/SKILL.md` aus (Sync mit Remote,
+Branch-Entscheidung, Build-Check, Commit, Push, PR) — diese Datei lesen und
+befolgen. Dafür liefern:
 
-   ## Summary
-   - Rohanalyse <Quelle/Thema> unter `sources/analysis/<slug>.md`
-   - Doku-Seite unter `site/docs-<bereich>/<unterordner>/<slug>.md`
+- **Dateien:** Rohanalyse, Doku-Seite, ggf. `_category_.json`, und die
+  aktualisierte `intro.md` aus Schritt 5.
+- **Branch-Namens-Vorschlag:** `claude/add-source-<slug>`.
+- **PR-Titel:** `Add <Kurzthema>`.
+- **Summary-Bullets:**
+  - Rohanalyse `<Quelle/Thema>` unter `sources/analysis/<slug>.md`
+  - Doku-Seite unter `site/docs-<bereich>/<unterordner>/<slug>.md`
+- **Test-Plan-Bullets:** Standard aus `repo-publish-flow` (Build + Preview-Check).
 
-   ## Test plan
-   - [x] `npm run build` in `site/` erfolgreich
-   - [ ] Preview-Link prüfen, Inhalt gegenlesen
-   ```
-6. **Nicht automatisch mergen** — das Erstellen/Aktualisieren des PR ist das
-   definierte Ende des Skill-Ablaufs. Der bestehende `pr-preview`-Workflow
-   kommentiert automatisch mit der Live-Vorschau-URL (siehe `CLAUDE.md` →
-   "Deploy & PR-Previews"); der User prüft die Preview und merged selbst.
+Bei "bestehender Branch/PR passt thematisch" zusätzlich zu `repo-publish-flow`
+Schritt 2: anhand des `add-source`-PR-Titels/-Beschreibung prüfen, ob die neue
+Quelle dazupasst.
 
 ## Nicht tun
 

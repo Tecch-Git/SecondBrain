@@ -1,0 +1,8 @@
+{
+  "label": "Windows-Commandline",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Shortcuts für die Windows-Kommandozeile (cmd.exe)."
+  }
+}
