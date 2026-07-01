@@ -1,6 +1,7 @@
 # Third-Party Notices
 
-Die Skills `ecc-guide`, `skill-scout` und `agent-sort` unter
+Die Skills `ecc-guide`, `skill-scout`, `agent-sort`, `design-system` und
+`frontend-design-direction` unter
 [`.claude/skills/`](./.claude/skills/) sind unveränderte Kopien aus dem
 "Everything Claude Code" (ECC) Plugin-Marketplace, projektweit in dieses
 Repo übernommen, damit sie auch in Cloud-/Remote-Sessions ohne globale
