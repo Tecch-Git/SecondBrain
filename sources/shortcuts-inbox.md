@@ -16,4 +16,5 @@ Format pro Eintrag:
 
 ## Offene Einträge
 
-_Noch keine Einträge._
+- **Esc** — Windows `cmd.exe`: löscht die aktuelle Eingabezeile (kompletten getippten Text vor dem Ausführen). Vermutete Kategorie: _neu? z. B. "Windows-Commandline"_. _Erfasst: 2026-07-01_
+- **cls** — Windows `cmd.exe`: löscht den gesamten sichtbaren Konsolenbildschirm und setzt den Cursor neu (Pendant zu `clear` unter Linux). Vermutete Kategorie: _neu? z. B. "Windows-Commandline"_. _Erfasst: 2026-07-01_
