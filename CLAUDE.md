@@ -14,7 +14,13 @@ statische Website über GitHub Pages. Zweck:
 - Erster inhaltlicher Bereich: "KI-gestützte Entwicklung" (Claude Code & Copilot
   Workflows, Prompting-Patterns), mit der Spec/Verifier/Environment-Methode als ein
   Kapitel darunter (nicht als alleiniger Fokus).
-- Später weitere, unabhängige Dokubereiche geplant (z. B. Tastatur-Shortcuts-Library).
+- Zweiter Dokubereich: "Shortcuts" (`site/docs-shortcuts/`) — Tastatur-/
+  Commandline-/Browser-Shortcuts zum Nachschlagen und Wiederholen. Befüllung
+  über die Skills `shortcut-capture` (beiläufiges Erfassen beim Nachschlagen,
+  landet in `sources/shortcuts-inbox.md`) und `shortcut-curate` (explizites
+  Kuratieren der Inbox in die veröffentlichte Doku, siehe `.claude/skills/`).
+- Weitere, unabhängige Dokubereiche denkbar, nach demselben Multi-Instance-
+  Docs-Muster.
 
 ## Repo-Struktur
 
@@ -97,8 +103,10 @@ CI/CD läuft über zwei GitHub-Actions-Workflows, beide deployen auf den
 - Standardbranch: `main`.
 - Remote: `https://github.com/Tecch-Git/SecondBrain.git` (privates Repo).
 - Klassische `git`-Befehle (init/remote/push); kein `gh`-CLI-Tool.
-- Der `add-source`-Skill (`.claude/skills/add-source/`) committet/pusht seine
-  Änderungen selbst und erstellt/aktualisiert dafür automatisch einen PR
-  (Details siehe dort) — das ist die einzige bewusste Ausnahme vom Prinzip
-  "User committet selbst". Gemerged wird ausschließlich manuell durch den
-  User, nach Prüfung der PR-Preview.
+- Die Skills `add-source` und `shortcut-curate` committen/pushen ihre
+  Änderungen selbst und erstellen/aktualisieren dafür automatisch einen PR
+  (gemeinsamer Ablauf in `.claude/skills/repo-publish-flow/`) — das sind die
+  bewussten Ausnahmen vom Prinzip "User committet selbst". `shortcut-capture`
+  ändert dagegen nur lokal die Inbox (`sources/shortcuts-inbox.md`) und
+  committet/pusht nur auf explizite Aufforderung. Gemerged wird in allen
+  Fällen ausschließlich manuell durch den User, nach Prüfung der PR-Preview.
