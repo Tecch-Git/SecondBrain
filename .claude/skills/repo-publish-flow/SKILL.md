@@ -34,13 +34,24 @@ Der aufrufende Skill liefert dabei:
 
 ### 2. Branch-Entscheidung (Default: nur neuer Branch wenn nötig)
 
-- Aktueller Branch ist bereits ein offener Topic-Branch/PR, dessen Titel/
-  Beschreibung inhaltlich zur neuen Änderung passt → dort weiterarbeiten
-  (außer der User weist explizit auf einen neuen Branch hin).
-- Aktueller Branch ist `main`, oder kein offener passender PR existiert → ein
-  neuer Branch ist nötig. **Kurz als Empfehlung nennen** (mit dem vom
-  aufrufenden Skill gelieferten Namensvorschlag), nicht stillschweigend
-  erstellen — finale Entscheidung trifft der User.
+- **Immer alle Branches prüfen**, nicht nur den aktuellen: lokale Branches
+  (`git branch`) und Remote-Branches (`git branch -r` bzw. offene PRs via
+  GitHub-MCP/`gh pr list`) auflisten.
+- Für jeden gefundenen Branch/PR sinngemäß (Name, Titel, Beschreibung,
+  bisherige Commits/Dateien) prüfen, ob die aktuelle Anforderung/Änderung
+  inhaltlich dazu passt — nicht nur beim aktuellen Branch, sondern über alle
+  hinweg.
+- Passender bestehender Branch gefunden → **als Vorschlag nennen**, unabhängig
+  davon ob es der aktuelle Branch ist oder ein anderer (z. B. "Passt inhaltlich
+  zu Branch X — dort weiterarbeiten oder neuen Branch erstellen?"). Nicht
+  stillschweigend übernehmen — finale Entscheidung trifft der User.
+- Kein inhaltlich passender Branch vorhanden → ein neuer Branch ist nötig.
+  **Kurz als Empfehlung nennen** (mit dem vom aufrufenden Skill gelieferten
+  Namensvorschlag), nicht stillschweigend erstellen — finale Entscheidung
+  trifft der User.
+- Entscheidet sich der User für einen anderen als den aktuellen Branch, erst
+  dorthin wechseln (`git checkout`/`git switch`) und ggf. wie in Schritt 1
+  syncen, bevor es weitergeht.
 - Neuer Branch zweigt vom aktuellen Arbeits-Branch ab (nach dem Sync aus
   Schritt 1), nicht zwingend von `main`.
 
