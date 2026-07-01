@@ -24,14 +24,17 @@ bleibt manuell — der User liefert das Gemini-Rohoutput im Chat.
 **Nicht selbst entscheiden** — immer nachfragen, auch wenn ein Thema
 naheliegend erscheint:
 
-1. Vorhandene Dokubereiche zeigen (`ls site/docs-*`, aktuell nur
-   `docs-ki-entwicklung`) und fragen, ob die Quelle in einen bestehenden
-   Bereich gehört oder ein neuer Bereich nötig ist.
+1. Vorhandene Dokubereiche zeigen (`ls site/docs-*`) und fragen, ob die
+   Quelle in einen bestehenden Bereich gehört oder ein neuer Bereich nötig
+   ist.
    - **Neuer Dokubereich** = eigene `plugin-content-docs`-Instanz in
-     `docusaurus.config.js` (neues Plugin, neuer Sidebar, neuer Navbar-Eintrag)
-     — das ist eine strukturelle Änderung, die **nicht** im selben Zug
-     mitgemacht wird. Stattdessen: kurz mit dem User abstimmen, dass dafür
-     erst die Config erweitert wird, bevor Inhalte entstehen.
+     `docusaurus.config.js` (neues Plugin, neuer Sidebar, neuer
+     Navbar-Eintrag, neuer Footer-Eintrag) **plus** eine neue Kachel in
+     `site/src/components/HomepageFeatures/index.js` (`DocAreas`-Array,
+     sonst ist der Bereich vom Dashboard aus nicht erreichbar) — das ist
+     eine strukturelle Änderung, die **nicht** im selben Zug mitgemacht
+     wird. Stattdessen: kurz mit dem User abstimmen, dass dafür erst die
+     Config erweitert wird, bevor Inhalte entstehen.
 2. Innerhalb des Bereichs vorhandene Unterordner zeigen (z. B.
    `site/docs-ki-entwicklung/methoden`) und fragen, ob die Quelle dorthin
    gehört oder ein neuer Unterordner (mit eigener `_category_.json`) sinnvoll
