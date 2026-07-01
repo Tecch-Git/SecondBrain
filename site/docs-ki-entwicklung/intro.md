@@ -18,7 +18,8 @@ Copilot.
 - **[Skills](/docs/ki-entwicklung/category/skills)** — Aufbau und Best
   Practices für Agent Skills, getrennt nach Tool.
   - **[Claude](/docs/ki-entwicklung/category/claude)** —
-    [Don't Build Agents, Build Skills Instead](./skills/claude/claude-skills-basics.md)
+    [Don't Build Agents, Build Skills Instead](./skills/claude/claude-skills-basics.md),
+    [Den richtigen ECC-Skill finden](./skills/claude/ecc-skill-discovery.md)
   - **[Copilot](/docs/ki-entwicklung/category/copilot)** —
     [Awesome Copilot Skills Reference](./skills/copilot/awesome-copilot-skills.md)
 

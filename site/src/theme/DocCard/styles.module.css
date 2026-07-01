@@ -1,0 +1,17 @@
+.folderIcon {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.customIcon {
+  width: 1.3rem;
+  height: 1.3rem;
+  object-fit: contain;
+}
+
+/* GitHub Copilot's mark is solid black; invert it to stay visible on the
+   dark-mode card background instead of disappearing into it. */
+[data-theme='dark'] .customIcon[src*='copilot'] {
+  filter: invert(1);
+}
